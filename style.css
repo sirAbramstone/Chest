@@ -1,0 +1,72 @@
+:root {
+  --primary-color: rgba(241, 196, 15, 1);
+  --secondary-color: red;
+}
+
+body {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  background-color: var(--primary-color);
+}
+
+main.chest {
+  min-height: 100vh;
+
+  display: grid;
+  grid-template-columns: repeat(13, 1fr);
+  grid-template-rows: repeat(8, 100px);
+}
+
+.slider {
+  padding: 1rem 2rem;
+  margin-top: 50px;
+  grid-area: 1 / -2 / 2 / -5;
+  height: 50px;
+  width: 200px;
+
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.slider > * {
+  display: block;
+}
+
+.color-boxes {
+  grid-area: 3 / 6 / 7 / 9;
+  width: 275px;
+
+  background: var(--secondary-color);
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.4);
+  border-radius: 0.3rem;
+
+  transform: perspective(500px) rotateY(calc(var(--slider) * 1deg));
+  transition: transform 0.3s;
+}
+
+.color-box {
+  padding: 1rem 3.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.3rem;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.color-box:nth-child(1) {
+  background: var(--bg-1);
+}
+.color-box:nth-child(2) {
+  background: var(--bg-2);
+}
+.color-box:nth-child(3) {
+  background: var(--bg-3);
+}
+.color-box:nth-child(4) {
+  background: var(--bg-4);
+}
+.color-box:nth-child(5) {
+  background: var(--bg-5);
+}
+.color-box:nth-child(6) {
+  background: var(--bg-6);
+}
